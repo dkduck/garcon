@@ -1,0 +1,50 @@
+bg_slice(rep, offset = (0 0), encoded_image)
+    background-position unit(offset[0], px) unit(offset[1], px)
+    background-repeat rep
+    background-image url(data:encoded_image)
+
+position_slice(pos_tuples...)
+    for pos in pos_tuples
+        {pos[0]} unit(pos[1] ? pos[1] : 0, px)
+
+bg_slices(rect, slice_names, base64s)
+    for slice_name, i in slice_names
+        if slice_name != skip
+            .{slice_name}
+
+                l = rect[0]
+                t = rect[1]
+                r = rect[2]
+                b = rect[3]
+
+                position absolute
+
+                if slice_name in (top-left top-right bottom-left bottom-right)
+                    background-repeat no-repeat
+                else if slice_name in (top bottom)
+                    background-repeat repeat-x
+                else if slice_name in (left right)
+                    background-repeat repeat-y
+                else
+                    background-repeat repeat
+
+                if slice_name == top-left
+                    position_slice(left, top, width l, height t)
+                else if slice_name == top
+                    position_slice(left l, top, right r, height t)
+                else if slice_name == top-right
+                    position_slice(top, right, width r, height t)
+                else if slice_name == left
+                    position_slice(left, top t, bottom b, width l)
+                else if slice_name == middle
+                    position_slice(left l, top t, right r, bottom b)
+                else if slice_name == right
+                    position_slice(top t, right, bottom b, width r)
+                else if slice_name == bottom-left
+                    position_slice(left, bottom, width l, height b)
+                else if slice_name == bottom
+                    position_slice(left l, right r, bottom, height b)
+                else if slice_name == bottom-right
+                    position_slice(right, bottom, width r, height b)
+
+                background-image url(data:base64s[i])
