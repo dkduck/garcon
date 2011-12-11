@@ -2,6 +2,6 @@
     "name": "Garcon",
     "version": "0.1.0",
     "dependencies": {
-        "stylus": "~0.19.8",
+        "stylus": "~0.19.8"
     }
 }
