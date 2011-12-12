@@ -1,0 +1,8 @@
+{
+    "name": "Garcon",
+    "version": "0.1.0",
+    "dependencies": {
+        "clean-css": "~0.3.0",
+        "uglify-js": "~1.2.0"
+    }
+}
