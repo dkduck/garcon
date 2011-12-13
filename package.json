@@ -1,0 +1,7 @@
+{
+    "name": "Garcon",
+    "version": "0.1.0",
+    "dependencies": {
+        "async": "~0.1.15"
+    }
+}
