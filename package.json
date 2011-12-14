@@ -2,6 +2,7 @@
     "name": "Garcon",
     "version": "0.1.0",
     "dependencies": {
-        "async": "~0.1.15"
+        "async": "~0.1.15",
+        "walk": "~2.0.2"
     }
 }
