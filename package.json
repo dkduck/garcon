@@ -4,6 +4,8 @@
     "dependencies": {
         "stylus": "~0.19.8",
         "clean-css": "~0.3.0",
-        "uglify-js": "~1.2.0"
+        "uglify-js": "~1.2.0",
+        "async": "~0.1.15",
+        "walk": "~2.0.2"
     }
 }
